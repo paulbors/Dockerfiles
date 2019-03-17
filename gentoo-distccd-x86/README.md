@@ -1,4 +1,4 @@
-# gentoo-distccd-x86
+# docker-gentoo-distccd-x86
 
 Dockerfile for distccd server on Gentoo based off stage3-x86.
 
