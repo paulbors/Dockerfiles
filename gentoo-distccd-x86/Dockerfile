@@ -38,10 +38,6 @@ RUN ( \
   ) > /usr/local/sbin/distccd-launcher && \
   chmod +x /usr/local/sbin/distccd-launcher
 
-RUN ( \
-    echo "DISTCCD_OPTS=\"--port 3632 --log-level notice --log-file /var/log/distccd.log -N 15 --allow 192.168.1.0/24\"" \
-  ) >> /etc/conf.d/distccd
-
 EXPOSE 3632
 
 CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr", "--no-detach"]
