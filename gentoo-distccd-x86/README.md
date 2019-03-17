@@ -39,8 +39,6 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
    ```
    # DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-gui
    ```
-    
-Also consult Gentoo's online docs on Distcc.
 
 ## References
 
