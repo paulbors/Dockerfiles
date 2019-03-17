@@ -9,7 +9,7 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
    ```
    $ docker build . -t gentoo-distcc-x86
    ```
-3. Run your immage and bind it to a TCP/IP port
+3. Run your image and bind it to a TCP/IP port
    ```
    $ docker run -d -p 3632:3632 gentoo-distcc-x86
    ```
