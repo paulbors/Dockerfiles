@@ -48,5 +48,6 @@ Also consult Gentoo's online docs on Distcc.
 
 ## References
 
-- [distcc: a fast, free distributed C/C++ compiler](https://github.com/distcc/distcc)
+- [Distcc - A fast, free distributed C/C++ compiler](https://github.com/distcc/distcc)
 - [Distcc - Gentoo Wiki](http://wiki.gentoo.org/wiki/Distcc)
+- [Docker - Getting Started with Docker and basic CLI commands](https://docs.docker.com/get-started/)
