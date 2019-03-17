@@ -26,11 +26,13 @@ RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python2_7"' >> /etc/portage/make.conf && \
   echo 'PYTHON_SINGLE_TARGET="python2_7"' >> /etc/portage/make.conf
 
+# Sync and install latest gcc and ditstcc
 RUN \
   emerge --sync && \
-  emerge gcc distcc
+  emerge gcc distcc \
   rm -rf /usr/portage/*
 
+# Create container startup script
 RUN ( \
     echo "#!/bin/sh" && \
     echo "eval \"\`gcc-config -E\`\"" && \
@@ -38,6 +40,8 @@ RUN ( \
   ) > /usr/local/sbin/distccd-launcher && \
   chmod +x /usr/local/sbin/distccd-launcher
 
+# Expose distcc port
 EXPOSE 3632
 
+# Run startup script and pass distcc its required parameters (allows all connections on 0.0.0.0/0, change as needed)
 CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr", "--no-detach"]
