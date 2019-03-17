@@ -29,7 +29,7 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
    pump make CC=distcc -j4
    ```
     
-## Distributing compiler with Portage
+## Distribute compile with Portage
 
 1. Configure your `/etc/portage/make.conf` and enable the `distcc` feature
   * Set the value of `N` to twice the number of total (local + remote) CPU cores + 1, and
