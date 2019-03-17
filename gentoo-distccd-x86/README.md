@@ -7,15 +7,11 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
 1. Copy `Dockerfile` to your localhost
 2. Build your image via:
    ```
-   $ docker build .
+   $ docker build . -t gentoo-distcc-x86
    ```
-3. Grab your `$imageID`
+3. Run your immage and bind it to a TCP/IP port
    ```
-   $ docker images
-   ```
-4. Run your immage and bind it to a TCP/IP port
-   ```
-   $ docker run -d -p 3632:3632 $imageID
+   $ docker run -d -p 3632:3632 gentoo-distcc-x86
    ```
 
 ## Distribute compile to your helper(s)
