@@ -1,2 +1,3 @@
-# docker-gentoo-distccd
-Dockerfile for distccd server on Gentoo
+# Dockerfiles
+
+A collection of useful docker files.
