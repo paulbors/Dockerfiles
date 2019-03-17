@@ -9,7 +9,7 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
    ```
    $ docker build .
    ```
-3. Grab your $imageID
+3. Grab your `$imageID`
    ```
    $ docker images
    ```
@@ -20,7 +20,7 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
 
 ## Distribute compile to your helper(s)
 
-1. Whitelist your helper(s) IPs in this case 192.168.0.1 on the client side (or whole class C via 192.168.0.0/24)
+1. Whitelist your helper(s) IPs in this case `192.168.0.1` on the client side (or whole class C via `192.168.0.0/24`)
    ```
    # /usr/bin/distcc-config --set-hosts "192.168.0.1,cpp,lzo"
    ```
@@ -31,7 +31,7 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
     
 ## Distributing compiler with Portage
 
-1. Configure your /etc/portage/make.conf and run emerge
+1. Configure your `/etc/portage/make.conf` and run `$ emerge ...`
    ```
    # Replace N and M with the right value as calculated previously
    MAKEOPTS="-jN -lM"
