@@ -15,6 +15,12 @@
 # Name the portage image
 FROM gentoo/portage:latest as portage
 
+# Image is based on stage3-x86
+FROM gentoo/stage3-x86:latest
+
+# Copy the entire portage volume in
+COPY --from=portage /usr/portage /usr/portage
+
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python2_7"' >> /etc/portage/make.conf && \
