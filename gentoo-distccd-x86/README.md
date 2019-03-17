@@ -31,13 +31,17 @@ Dockerfile for distccd server on Gentoo based off stage3-x86.
     
 ## Distributing compiler with Portage
 
-1. Configure your `/etc/portage/make.conf` and run `$ emerge ...` by
+1. Configure your `/etc/portage/make.conf` and enable the `distcc` feature
   * Set the value of `N` to twice the number of total (local + remote) CPU cores + 1, and
   * Set the value of `M` to the number of local CPU cores
    ```
    # Replace N and M with the right value as calculated previously
    MAKEOPTS="-jN -lM"
    FEATURES="distcc"
+   ```
+2. Run your `$ emerge ...` command and monitor the distribute compilation progress via
+   ```
+   # DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-gui
    ```
     
 Also consult Gentoo's online docs on Distcc.
