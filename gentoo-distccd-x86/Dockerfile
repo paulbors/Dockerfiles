@@ -1,4 +1,4 @@
-# Copyright 2019 Paul C Bors
+# Copyright 2019 gentoo-distccd-x86 (https://github.com/paulbors/Dockerfiles/edit/master/gentoo-distccd-x86)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
