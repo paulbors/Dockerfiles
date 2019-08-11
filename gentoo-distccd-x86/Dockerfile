@@ -23,8 +23,8 @@ COPY --from=portage /usr/portage /usr/portage
 
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
-  echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python2_7"' >> /etc/portage/make.conf && \
-  echo 'PYTHON_SINGLE_TARGET="python2_7"' >> /etc/portage/make.conf
+  echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python3_6"' >> /etc/portage/make.conf && \
+  echo 'PYTHON_SINGLE_TARGET="python3_6"' >> /etc/portage/make.conf
 
 # Sync and install latest gcc and ditstcc
 RUN \
