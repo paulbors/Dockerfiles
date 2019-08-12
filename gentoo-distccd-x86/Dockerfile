@@ -24,7 +24,11 @@ COPY --from=portage /usr/portage /usr/portage
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python3_6"' >> /etc/portage/make.conf && \
-  echo 'PYTHON_SINGLE_TARGET="python3_6"' >> /etc/portage/make.conf
+  echo 'PYTHON_SINGLE_TARGET="python3_6"'             >> /etc/portage/make.conf
+
+# Set CFLAGS and CXXFLAGS to mirror the archtype as needed, if needed...
+#RUN echo 'CFLAGS="-O1 -march=atom -mtune=atom -pipe"' >> /etc/portage/make.conf && \
+#  echo 'CXXFLAGS="${CFLAGS}"'                         >> /etc/portage/make.conf
 
 # Sync and install latest gcc and ditstcc
 RUN \
