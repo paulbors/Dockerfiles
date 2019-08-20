@@ -26,9 +26,7 @@ RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python3_6"' >> /etc/portage/make.conf && \
   echo 'PYTHON_SINGLE_TARGET="python3_6"'             >> /etc/portage/make.conf
 
-# TODO: Set below flags to mirror the archtype as needed, if needed...
-# WARNING: Changing your CHOST is not something that should be done lightly.
-# Please consult http://www.gentoo.org/doc/en/change-chost.xml before changing.
+# TODO: Set below flags to mirror the hardware for which you're distcc as needed, if needed...
 #RUN echo 'CHOST="i686-pc-linux-gnu"'                  >> /etc/portage/make.conf && \
 #  echo 'CFLAGS="-O1 -march=atom -mtune=atom -pipe"'   >> /etc/portage/make.conf && \
 #  echo 'CXXFLAGS="${CFLAGS}"'                         >> /etc/portage/make.conf
