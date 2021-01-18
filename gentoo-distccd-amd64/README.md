@@ -1,17 +1,17 @@
-# docker-gentoo-distccd-x86
+# docker-gentoo-distccd-amd64
 
-Dockerfile for distccd server on Gentoo based off stage3-x86.
+Dockerfile for distccd server on Gentoo based off stage3-amd64.
 
 ## Startup a Helper node
 
 1. Copy `Dockerfile` to your localhost
 2. Build your image via:
    ```
-   $ docker build . -t gentoo-distcc-x86
+   $ docker build . -t gentoo-distcc-amd64
    ```
 3. Run your image and bind it to a TCP/IP port
    ```
-   $ docker run -d -p 3632:3632 gentoo-distcc-x86
+   $ docker run -d -p 3632:3632 gentoo-distcc-amd64
    ```
 
 ## Distribute compile to your helper(s)
