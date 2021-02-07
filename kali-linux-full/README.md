@@ -13,9 +13,9 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
    ```
    $ docker run ---name kali-linux -net="host" --privileged -e DISPLAY=$DISPLAY -it -v /tmp/.X11-unix:/tmp/.X11-unix kali-linux
    
-## Restarting kali-linux container
+### Restarting kali-linux container
 
-Once created under `kali-linux`, you can restart it (after reboot) or re-attach to it:
+Once image is created under the `kali-linux` name, you can restart it (after reboot) or re-attach to it:
 
 1. Start `kali-linux` container
    ```
