@@ -34,9 +34,6 @@ RUN \
   apt-get install kali-desktop-xfce -y && \
   apt-get install tightvncserver -y && \
   export USER=root
-  
-# Run via Bash  
-# CMD ["/bin/bash"]
 
 # Run xfce via VNC
 ENV USER=root
