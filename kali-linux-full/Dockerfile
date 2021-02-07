@@ -21,7 +21,9 @@ RUN \
   apt-get update -y && \
   apt-cache search kali-linux && \
   apt-get install pciutils -y && \
-  apt-get install kali-linux-everything -y
+  apt-get install kali-linux-everything -y && \
+  apt-get install iputils-ping -y && \
+  apt update && \
 
 # Run container
 CMD ["/bin/bash"]
