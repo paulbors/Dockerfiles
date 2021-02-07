@@ -14,22 +14,20 @@
 #  https://hub.docker.com/search?q=kalilinux%2F&type=image
 FROM kalilinux/kali-rolling:latest as kali
 
-# Set the locale
-RUN locale-gen en_US.UTF-8  
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8
-
 # Prep container with latest metapackages and install kali-linux-everything
 #  https://www.kali.org/news/kali-linux-metapackages/
 ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update -y && \
   apt-cache search kali-linux && \
+  # Install missing tools
   apt-get install pciutils -y && \
   apt-get install iputils-ping -y && \
+  # Install kali-linux-everything packages
   apt-get install kali-linux-everything -y && \
   apt update
-
-# Run container
+  # Set the lcale
+  echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
+  locage-gen
+  
 CMD ["/bin/bash"]
