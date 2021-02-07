@@ -21,13 +21,14 @@ RUN \
   apt-get update -y && \
   apt-cache search kali-linux && \
   # Install missing tools
+  apt-get install apt-utils && \
   apt-get install pciutils -y && \
   apt-get install iputils-ping -y && \
   # Install kali-linux-everything packages
   apt-get install kali-linux-everything -y && \
   apt update && \
   # Set the lcale
-  /bin/echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
+  echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
   locage-gen && \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
