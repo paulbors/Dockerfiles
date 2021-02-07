@@ -39,4 +39,5 @@ RUN \
 # CMD ["/bin/bash"]
 
 # Run xfce via VNC
+ENV USER=root
 CMD ["tightvncserver", ":0", "-geometry", "1280x800", "-depth", "16", "-pixelformat", "rgb565"]
