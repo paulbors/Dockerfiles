@@ -29,7 +29,7 @@ Once image is created under the `kali-linux` name, you can restart it (after reb
    $ docker start kali-linux
    ```
 2. Reconnect to your desktop via VNC to `127.0.0.1:5903`
-2. __Optinal:__ Attach to `kali-linux` console output
+2. *Optinal:* Attach to `kali-linux` console output
    ```
    $ docker attach kali-linux
    ```
