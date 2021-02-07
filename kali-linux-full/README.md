@@ -11,7 +11,7 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
    ```
 3. Start `kali-linux` container image
    ```
-   $ docker start kali-linux
+   $ docker run --name kali-linux --net="host" --privileged -e DISPLAY=$DISPLAY -it -v /tmp/.X11-unix:/tmp/.X11-unix kali-linux
    ```
 3. Install a VNC client for your localhost
    ```
