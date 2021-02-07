@@ -32,7 +32,7 @@ RUN \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
   apt-get install tightvncserver -y && \
-  export USER=root && \
+  export USER=root
   
 # Run via Bash  
 # CMD ["/bin/bash"]
