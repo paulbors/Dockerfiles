@@ -29,5 +29,13 @@ RUN \
   # Set the lcale
   echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
   locage-gen
+  # Installing xfce via VNC
+  apt-get install kali-desktop-xfce -y && \
+  apt-get install install tightvncserver -y && \
+  export USER=root && \
   
-CMD ["/bin/bash"]
+# Run via Bash  
+# CMD ["/bin/bash"]
+
+# Run xfce via VNC
+CMD ["tightvncserver :0 -geometry 1280x800 -depth 16 -pixelformat rgb565"]
