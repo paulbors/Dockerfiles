@@ -20,6 +20,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update -y && \
   apt-cache search kali-linux && \
+  apt-get install pciutils -y && \
   apt-get install kali-linux-everything -y
 
 # Run container
