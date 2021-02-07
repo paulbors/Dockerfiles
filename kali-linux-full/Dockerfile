@@ -27,7 +27,7 @@ RUN \
   apt-get install kali-linux-everything -y && \
   apt update
   # Set the lcale
-  echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
+  /bin/echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
   locage-gen
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
