@@ -9,7 +9,7 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
    ```
    $ docker build . -t kali_linux
    ```
-3. Install a VNC client for your localhost
+3. On your localhost, install a VNC client for your localhost
    ```
    $ apt-get install tigervnc
    ```
