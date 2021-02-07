@@ -14,6 +14,12 @@
 #  https://hub.docker.com/search?q=kalilinux%2F&type=image
 FROM kalilinux/kali-rolling:latest as kali
 
+# Set the locale
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+
 # Prep container with latest metapackages and install kali-linux-everything
 #  https://www.kali.org/news/kali-linux-metapackages/
 ENV DEBIAN_FRONTEND noninteractive
