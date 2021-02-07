@@ -13,7 +13,8 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
    ```
    $ apt-get install tigervnc
    ```
-   Under Gnome you can use `Remote Desktop Viewer`
+   Under Gnome you can use `Remote Desktop Viewer`.
+   Under Windows you can use `RealVNC1.
 4. Connect to your `kali-linux` desktop via VNC to `127.0.0.1:5903
    ```
    $ vncviewer 127.0.0.1:5903
