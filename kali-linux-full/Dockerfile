@@ -31,7 +31,7 @@ RUN \
   locage-gen
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
-  apt-get install install tightvncserver -y && \
+  apt-get install tightvncserver -y && \
   export USER=root && \
   
 # Run via Bash  
