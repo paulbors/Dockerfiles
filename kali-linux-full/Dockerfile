@@ -23,7 +23,7 @@ RUN \
   apt-get install pciutils -y && \
   apt-get install kali-linux-everything -y && \
   apt-get install iputils-ping -y && \
-  apt update && \
+  apt update
 
 # Run container
 CMD ["/bin/bash"]
