@@ -29,11 +29,10 @@ RUN \
   apt update && \
   # Set the lcale
   echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
-  locage-gen && \
+  locale-gen && \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
-  apt-get install tightvncserver -y && \
-  export USER=root
+  apt-get install tightvncserver -y
 
 # Run xfce via VNC
 ENV USER=root
