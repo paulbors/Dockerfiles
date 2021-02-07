@@ -7,7 +7,7 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
 1. Copy `Dockerfile` to your localhost
 2. Build your image via:
    ```
-   $ docker build . -t kali_linux
+   $ docker build . -t kali-linux
    ```
 3. On your localhost, install a VNC client for your localhost
    ```
@@ -15,23 +15,23 @@ Dockerfile for Kali Linux based off kalilinux/kali-rolling:latest.
    ```
    Under Gnome you can use `Remote Desktop Viewer`.  
    Under Windows you can use `RealVNC`.
-4. Connect to your `kali_linux` desktop via VNC to `127.0.0.1:5903`
+4. Connect to your `kali-linux` desktop via VNC to `127.0.0.1:5903`
    ```
    $ vncviewer 127.0.0.1:5903
    ```
    
-### Restarting kali_linux container
+### Restarting kali-linux container
 
-Once image is created under the `kali_linux` name, you can restart it (after reboot) or re-attach to it:
+Once image is created under the `kali-linux` name, you can restart it (after reboot) or re-attach to it:
 
-1. Start `kali_linux` image
+1. Start `kali-linux` image
    ```
-   $ docker start kali_linux
+   $ docker start kali-linux
    ```
 2. Reconnect to your desktop via VNC to `127.0.0.1:5903`
-2. *Optinal:* Attach to `kali_linux` console output
+2. *Optinal:* Attach to `kali-linux` console output
    ```
-   $ docker attach kali_linux
+   $ docker attach kali-linux
    ```
 
 ## References
