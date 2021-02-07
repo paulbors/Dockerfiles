@@ -25,10 +25,10 @@ RUN \
   apt-get install iputils-ping -y && \
   # Install kali-linux-everything packages
   apt-get install kali-linux-everything -y && \
-  apt update
+  apt update && \
   # Set the lcale
   /bin/echo "LANG=\"en_US.utf8\"" > /etc/locale.gen && \
-  locage-gen
+  locage-gen && \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
   apt-get install tightvncserver -y && \
