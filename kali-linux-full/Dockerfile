@@ -24,6 +24,7 @@ RUN \
   apt-get install apt-utils && \
   apt-get install pciutils -y && \
   apt-get install iputils-ping -y && \
+  apt-get install nano -y && \
   # Install kali-linux-everything packages
   apt-get install kali-linux-everything -y && \
   apt update && \
@@ -32,9 +33,26 @@ RUN \
   locale-gen && \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
-  apt-get install tightvncserver -y
+  apt-get install tightvncserver -y && \
+  apt-get install expect -y
+  apt-get install spawn-fcgi -y
+
+# Set the VNC Server password
+RUN ( \
+    echo "spawn \"/bin/vncpasswd\"" && \
+    echo "expect \"Password:\"" && \
+    echo "send \"kalitux\r\"" && \
+    echo "expect \"Verify:\"" && \
+    echo "send \"kalitux\r\"" && \
+    echo "expect \"Would you like to enter a view-only password (y/n)?\"" && \
+    echo "send \"n\r\"" && \
+    echo "expect eof" && \
+    echo "exit" && \
+    echo "EOF" \
+  ) > ./vncpass.exp
+RUN expect vncpass.exp
 
 # Run xfce via VNC
 ENV USER=root
 EXPOSE 5903/tcp
-CMD ["tightvncserver", ":0", "-geometry", "1280x800", "-depth", "16", "-pixelformat", "rgb565"]
+CMD ["tightvncserver", ":1", "-geometry", "1280x800", "-depth", "16", "-pixelformat", "rgb565"]
