@@ -34,7 +34,7 @@ RUN \
   # Installing xfce via VNC
   apt-get install kali-desktop-xfce -y && \
   apt-get install tightvncserver -y && \
-  apt-get install expect -y
+  apt-get install expect -y && \
   apt-get install spawn-fcgi -y
 
 # Set the VNC Server password
