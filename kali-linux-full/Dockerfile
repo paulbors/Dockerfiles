@@ -52,7 +52,14 @@ RUN ( \
   ) > ./vncpass.exp
 RUN expect vncpass.exp
 
+# Create script that start VNC
+RUN ( \
+    echo "!#/bin/sh" && \
+    echo "tightvncserver :3 -geometry 1280x800 -depth 16 -pixelformat rgb565" \
+  ) > ./vncstart.sh && \
+  chmod +x vncstart.sh
+
 # Run xfce via VNC
-ENV USER=root
 EXPOSE 5903/tcp
-CMD ["tightvncserver", ":1", "-geometry", "1280x800", "-depth", "16", "-pixelformat", "rgb565"]
+ENV USER=root
+CMD ["/bin/bash"]
