@@ -52,7 +52,7 @@ RUN ( \
   ) > ./vncpass.exp
 RUN expect vncpass.exp
 
-# Create script that start VNC
+# Create script that starta the VNC server
 RUN ( \
     echo "!#/bin/sh" && \
     echo "tightvncserver :3 -geometry 1280x800 -depth 16 -pixelformat rgb565" \
