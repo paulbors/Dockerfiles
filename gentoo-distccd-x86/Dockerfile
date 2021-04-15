@@ -19,7 +19,7 @@ FROM gentoo/portage:latest as portage
 FROM gentoo/stage3-x86:latest
 
 # Copy the entire portage volume in
-COPY --from=portage /usr/portage /usr/portage
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
