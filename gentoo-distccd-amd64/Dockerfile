@@ -35,7 +35,7 @@ RUN touch /etc/init.d/functions.sh && \
 RUN \
   emerge --sync && \
   emerge gcc distcc && \
-  rm -rf /usr/portage/*
+  rm -rf /var/db/repos/gentoo/*
 
 # Create container startup script
 RUN ( \
