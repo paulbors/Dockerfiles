@@ -24,7 +24,10 @@ COPY --from=portage /usr/portage /usr/portage
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python3_6"' >> /etc/portage/make.conf && \
-  echo 'PYTHON_SINGLE_TARGET="python3_6"'             >> /etc/portage/make.conf
+  echo 'PYTHON_SINGLE_TARGET="python3_6"'             >> /etc/portage/make.conf && \
+  echo 'COMMON_FLAGS="-O2 -march=i686 -pipe"'         >> /etc/portage/make.conf && \
+  echo 'CFLAGS="${COMMON_FLAGS}"'                     >> /etc/portage/make.conf && \
+  echo 'CXXFLAGS="${COMMON_FLAGS}"'                   >> /etc/portage/make.conf
 
 # TODO: Set below flags to mirror the hardware for which you're distcc as needed, if needed...
 #RUN echo 'CHOST="i686-pc-linux-gnu"'                  >> /etc/portage/make.conf && \
@@ -49,4 +52,4 @@ RUN ( \
 EXPOSE 3632
 
 # Run startup script and pass distcc its required parameters (allows all connections on 0.0.0.0/0, change as needed)
-CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr", "--no-detach"]
+CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr"]
