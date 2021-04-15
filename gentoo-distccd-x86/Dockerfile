@@ -24,10 +24,7 @@ COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 # Continue with image build ...
 RUN touch /etc/init.d/functions.sh && \
   echo 'PYTHON_TARGETS="${PYTHON_TARGETS} python3_7"' >> /etc/portage/make.conf && \
-  echo 'PYTHON_SINGLE_TARGET="python3_7"'             >> /etc/portage/make.conf && \
-  echo 'COMMON_FLAGS="-O2 -march=i686 -pipe"'         >> /etc/portage/make.conf && \
-  echo 'CFLAGS="${COMMON_FLAGS}"'                     >> /etc/portage/make.conf && \
-  echo 'CXXFLAGS="${COMMON_FLAGS}"'                   >> /etc/portage/make.conf
+  echo 'PYTHON_SINGLE_TARGET="python3_7"'             >> /etc/portage/make.conf
 
 # TODO: Set below flags to mirror the hardware for which you're distcc as needed, if needed...
 #RUN echo 'CHOST="i686-pc-linux-gnu"'                  >> /etc/portage/make.conf && \
@@ -38,7 +35,7 @@ RUN touch /etc/init.d/functions.sh && \
 RUN \
   emerge --sync && \
   emerge gcc sys-devel/distcc && \
-  rm -rf /usr/portage/*
+  rm -rf /var/db/repos/gentoo/*
 
 # Create container startup script
 RUN ( \
