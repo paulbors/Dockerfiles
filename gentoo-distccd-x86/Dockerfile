@@ -37,7 +37,7 @@ RUN touch /etc/init.d/functions.sh && \
 # Sync and install latest gcc and ditstcc
 RUN \
   emerge --sync && \
-  emerge gcc distcc && \
+  emerge gcc sys-devel/distcc && \
   rm -rf /usr/portage/*
 
 # Create container startup script
