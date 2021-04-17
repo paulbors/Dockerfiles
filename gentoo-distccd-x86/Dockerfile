@@ -49,4 +49,4 @@ RUN ( \
 EXPOSE 3632
 
 # Run startup script and pass distcc its required parameters (allows all connections on 0.0.0.0/0, change as needed)
-CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr"]
+CMD ["/usr/local/sbin/distccd-launcher", "--allow", "0.0.0.0/0", "--user", "distcc", "--log-level", "notice", "--log-stderr", "--no-detach"]
